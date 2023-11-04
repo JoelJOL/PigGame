@@ -1,21 +1,28 @@
+//'use strict';
 'use strict';
 function rollButton() {
-    var rollValue = Math.floor((Math.random() * 6) + 1);
-	var diceLocation = "/PigGame/images/" + "dice-" + rollValue + ".png";
-	var img = document.querySelectorAll("img")[0];
-	img.setAttribute("src", diceLocation);
-    getScorePlayer1(rollValue);
+  var rollValue = Math.floor(Math.random() * 6 + 1);
+  var diceLocation = 'images/' + 'dice-' + rollValue + '.png';
+  var img = document.querySelectorAll('img')[0];
+  img.setAttribute('src', diceLocation);
+  getScorePlayer1(rollValue);
+}
+
+function ChangePlayer() {
+  let sectionClass = document.getElementsByTagName('section');
+  for (let i = 0; i < 2; i++) {
+    sectionClass[i].classList.toggle('player--active');
   }
-  
-  let score=0;
+}
+  let score=10;
   let currentScore=0;
   const getScorePlayer1=(score)=>{
       currentScore+=score;
       let scoreTag=document.getElementById("current--0");
       console.log(scoreTag);
       scoreTag.textContent=`${currentScore}`;
+      ChangePlayer();
   }
-  getScorePlayer1(score);
   
   
   const getScorePlayer2=(score)=>{
