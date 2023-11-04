@@ -1,5 +1,4 @@
 //'use strict';
-'use strict';
 function rollButton() {
   var rollValue = Math.floor(Math.random() * 6 + 1);
   var diceLocation = 'images/' + 'dice-' + rollValue + '.png';
@@ -21,7 +20,6 @@ function ChangePlayer() {
       let scoreTag=document.getElementById("current--0");
       console.log(scoreTag);
       scoreTag.textContent=`${currentScore}`;
-      ChangePlayer();
   }
   
   
@@ -31,4 +29,3 @@ function ChangePlayer() {
       console.log(scoreTag);
       scoreTag.textContent=`${currentScore}`;
   }
-  getScorePlayer2(score);
