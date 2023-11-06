@@ -7,7 +7,7 @@ function rollButton() {
   var diceLocation = 'images/' + 'dice-' + rollValue + '.png';
   var img = document.querySelectorAll('img')[0];
   img.setAttribute('src', diceLocation);
-  getScorePlayer1(rollValue);
+  getScorePlayer(rollValue);
 }
 
 function changePlayer() {
@@ -17,17 +17,9 @@ function changePlayer() {
   }
 }
   
-const getScorePlayer1=(score)=>{
+const getScorePlayer=(score)=>{
     currentScore+=score;
-    let scoreTag=document.getElementById("current--0");
-    console.log(scoreTag);
-    scoreTag.textContent=`${currentScore}`;
-}
-
-  
-const getScorePlayer2=(score)=>{
-    currentScore+=score;
-    let scoreTag=document.getElementById("current--1");
+    let scoreTag=document.getElementById(`current--${playerId}`);
     console.log(scoreTag);
     scoreTag.textContent=`${currentScore}`;
 }
