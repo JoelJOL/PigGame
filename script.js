@@ -7,7 +7,7 @@ function NewGame() {
   document.getElementById('img').src = 'images/dice-1.png';
 }
 //'use strict';
-let playerId=1;
+let playerId=0;
 let score;
 let currentScore=0;
 function rollButton() {
