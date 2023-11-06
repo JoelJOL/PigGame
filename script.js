@@ -18,18 +18,20 @@ function rollButton() {
   getScorePlayer(rollValue);
 }
 
-function ChangePlayer() {
+function changePlayer() {
   let sectionClass = document.getElementsByTagName('section');
-  for (i = 0; i < 2; i++) {
+  for (let i = 0; i < 2; i++) {
     if (sectionClass[i].classList.contains('player--active')) {
       let activeScore = document.getElementById(`current--${i}`).innerHTML;
-      document.getElementById(`score--${i}`).innerHTML = activeScore;
+      document.getElementById(`current--${i}`).innerHTML='0';
+      document.getElementById(`score--${i}`).innerHTML = parseInt(document.getElementById(`score--${i}`).innerHTML)+parseInt(activeScore);
       sectionClass[i].classList.remove('player--active');
     } else {
       sectionClass[i].classList.add('player--active');
       playerId = i;
     }
   }
+  currentScore=0;
 }
   
 const getScorePlayer=(score)=>{
