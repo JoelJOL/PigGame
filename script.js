@@ -6,9 +6,17 @@ function rollButton() {
   img.setAttribute('src', diceLocation);
 }
 
+let playerId;
 function ChangePlayer() {
   let sectionClass = document.getElementsByTagName('section');
-  for (let i = 0; i < 2; i++) {
-    sectionClass[i].classList.toggle('player--active');
+  for (playerId = 0; playerId < 2; playerId++) {
+    if (sectionClass[playerId].classList.contains('player--active')) {
+      let activeScore = document.getElementById(
+        `current--${playerId}`
+      ).innerHTML;
+      console.log(activeScore);
+      document.getElementById(`score--${playerId}`).innerHTML = activeScore;
+    }
+    sectionClass[playerId].classList.toggle('player--active');
   }
 }
