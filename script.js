@@ -18,8 +18,6 @@ function rollButton() {
   getScorePlayer(rollValue);
 }
 
-
-let playerId = 0;
 function ChangePlayer() {
   let sectionClass = document.getElementsByTagName('section');
   for (i = 0; i < 2; i++) {
