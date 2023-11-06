@@ -1,5 +1,6 @@
 'use strict';
 function NewGame() {
+  location.reload();
   document.getElementById('score--0').innerHTML = '0';
   document.getElementById('score--1').innerHTML = '0';
   document.getElementById('current--0').innerHTML = '0';
@@ -7,7 +8,7 @@ function NewGame() {
   document.getElementById('img').src = 'images/dice-1.png';
 }
 //'use strict';
-let playerId=1;
+let playerId=0;
 let score;
 let currentScore=0;
 function rollButton() {
@@ -15,23 +16,27 @@ function rollButton() {
   var diceLocation = 'images/' + 'dice-' + rollValue + '.png';
   var img = document.querySelectorAll('img')[0];
   img.setAttribute('src', diceLocation);
+  if(rollValue==1)
+  reset();
+  else
   getScorePlayer(rollValue);
 }
 
-
-let playerId = 0;
-function ChangePlayer() {
+function changePlayer() {
   let sectionClass = document.getElementsByTagName('section');
-  for (i = 0; i < 2; i++) {
+  for (let i = 0; i < 2; i++) {
     if (sectionClass[i].classList.contains('player--active')) {
       let activeScore = document.getElementById(`current--${i}`).innerHTML;
-      document.getElementById(`score--${i}`).innerHTML = activeScore;
+      document.getElementById(`current--${i}`).innerHTML='0';
+      document.getElementById(`score--${i}`).innerHTML = parseInt(document.getElementById(`score--${i}`).innerHTML)+parseInt(activeScore);
+      checkWinner();
       sectionClass[i].classList.remove('player--active');
     } else {
       sectionClass[i].classList.add('player--active');
       playerId = i;
     }
   }
+  currentScore=0;
 }
   
 const getScorePlayer=(score)=>{
@@ -43,17 +48,20 @@ const getScorePlayer=(score)=>{
 
   
   
-   function checkwinner()
+   function checkWinner()
    {
-    let playerId=0;
     let winnerscore=document.getElementsByClassName('player--active');
     console.log(winnerscore)
     let score=document.getElementById(`score--${playerId}`);
-    winScore=score.textContent;
+    let winScore=score.textContent;
     console.log(winScore)
     if(winScore>=100)
     {
      winnerscore[0].classList.add('player--winner');
     }
 
+  }
+  const reset=()=>{
+    document.getElementById(`current--${playerId}`).innerHTML='0';
+    changePlayer();
   }
