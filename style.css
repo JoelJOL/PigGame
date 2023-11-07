@@ -112,26 +112,27 @@ main {
 
 .current-score {
   font-size: 3.5rem;
-  
 }
-#current--1{
+#current--1 {
   position: absolute;
-  top:440px;
+  top: 440px;
   color: #ddd;
-  
 }
-#current--0{
+#current--0 {
   position: absolute;
-  top:440px;
+  top: 440px;
   color: #ddd;
-  
 }
-.current--score--active{
+.current--score--active {
   animation: moveup 1s 1;
 }
 @keyframes moveup {
-    0% {top: 440px;}
-    100% {top: 200px;}
+  0% {
+    top: 440px;
+  }
+  100% {
+    top: 200px;
+  }
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
@@ -199,4 +200,38 @@ main {
 .player--winner .name {
   font-weight: 700;
   color: #c7365f;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+}
+.upper h1 {
+  text-align: center;
+  font-size: 70px;
+}
+.middle {
+  display: flex;
+  margin-top: 70px;
+}
+.logo img {
+  /* flex: 1; */
+  height: 300px;
+  width: 300px;
+}
+.rules {
+  /* flex: 1; */
+  font-size: x-large;
+  font-weight: 900;
+  padding-left: 50px;
+  padding-top: 70px;
+}
+.lower button {
+  border-radius: 50px;
+  font-size: xx-large;
+  padding: 10px;
+  background-image: linear-gradient(to bottom left, #753682 0%, #bf2e34 100%);
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
 }
