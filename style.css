@@ -128,10 +128,13 @@ main {
 }
 .current--score--active{
   animation: moveup 1s 1;
+  color: #2f2f2f !important;
+  text-decoration:dashed;
 }
 @keyframes moveup {
     0% {top: 440px;}
     100% {top: 200px;}
+    
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
