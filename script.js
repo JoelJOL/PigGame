@@ -1,3 +1,15 @@
+const displayNames=()=>{
+  let name1=localStorage.getItem("name1");
+  let name2=localStorage.getItem("name2");
+  
+  document.getElementById("name--0").textContent=name1;
+  document.getElementById("name--1").textContent=name2;
+}
+
+displayNames(); 
+
+
+
 function NewGame() {
   location.reload();
   document.getElementById('score--0').innerHTML = '0';
@@ -32,10 +44,12 @@ function changePlayer() {
         document.getElementById(`score--${i}`).innerHTML =
           parseInt(document.getElementById(`score--${i}`).innerHTML) +
           parseInt(activeScore);
-        checkWinner();
+          checkWinner(i);
         sectionClass[i].classList.remove('player--active');
+        console.log("active before"+sectionClass[i]);
       } else {
         sectionClass[i].classList.add('player--active');
+        console.log("active after"+sectionClass[i]);
         playerId = i;
       }
     }
@@ -46,19 +60,22 @@ function changePlayer() {
 const getScorePlayer = score => {
   currentScore += score;
   let scoreTag = document.getElementById(`current--${playerId}`);
-  console.log(scoreTag);
   scoreTag.textContent = `${currentScore}`;
 };
 
-function checkWinner() {
+function checkWinner(i) {
+  console.log("checking winner"+playerId);
   let winnerscore = document.getElementsByClassName('player--active');
-  console.log(winnerscore);
-  let score = document.getElementById(`score--${playerId}`);
+  let score = document.getElementById(`score--${i}`);
   let winScore = score.textContent;
-  console.log(winScore);
   if (winScore >= 100) {
+    console.log("won");
     winnerscore[0].classList.add('player--winner');
+    let sectionClass = document.getElementsByTagName('section');
+    sectionClass[i].classList.add("won-celebration");
   }
+  
+
 }
 const reset = () => {
   document.getElementById(`current--${playerId}`).innerHTML = '0';
