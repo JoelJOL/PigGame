@@ -44,35 +44,37 @@ function changePlayer() {
         document.getElementById(`score--${i}`).innerHTML =
           parseInt(document.getElementById(`score--${i}`).innerHTML) +
           parseInt(activeScore);
+          checkWinner(i);
         sectionClass[i].classList.remove('player--active');
+        console.log("active before"+sectionClass[i]);
       } else {
         sectionClass[i].classList.add('player--active');
+        console.log("active after"+sectionClass[i]);
         playerId = i;
       }
     }
     currentScore = 0;
   }, 500);
-  checkWinner();
 }
 
 const getScorePlayer = score => {
   currentScore += score;
   let scoreTag = document.getElementById(`current--${playerId}`);
-  console.log(scoreTag);
   scoreTag.textContent = `${currentScore}`;
 };
 
-function checkWinner() {
+function checkWinner(i) {
+  console.log("checking winner"+playerId);
   let winnerscore = document.getElementsByClassName('player--active');
-  console.log(winnerscore);
-  let score = document.getElementById(`score--${playerId}`);
+  let score = document.getElementById(`score--${i}`);
   let winScore = score.textContent;
-  console.log(winScore);
   if (winScore >= 100) {
+    console.log("won");
     winnerscore[0].classList.add('player--winner');
+    let sectionClass = document.getElementsByTagName('section');
+    sectionClass[i].classList.add("won-celebration");
   }
-  let sectionClass = document.getElementsByTagName('section');
-  sectionClass[playerId].classList.add("won-celebration");
+  
 
 }
 const reset = () => {
