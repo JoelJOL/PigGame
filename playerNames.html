@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="landing-screen">
+      <div class="landing-main-div">
+        <br />
+        <h2 class="landing-text-white" id="main-text-piggame">Pig Game</h2>
+        <br /><br />
+        <h3 class="landing-text-white">Player 1</h3>
+        <br />
+        <input
+          type="text"
+          class="landing-text-input"
+          placeholder="Enter name of player 1"
+          id="player-name-1"
+          autocapitalize="on"
+          autocomplete="off"
+          required
+        /><br />
+        <h3 class="landing-text-white">Player 2</h3>
+        <br />
+        <input
+          type="text"
+          class="landing-text-input"
+          placeholder="Enter name of player 2"
+          id="player-name-2"
+          autocapitalize="on"
+          autocomplete="off"
+          required
+        />
+        <button class="play-button" onclick="gamePage()">
+          <p class="play-button-text">PLAY</p>
+        </button>
+      </div>
+    </div>
+    <script src="action.js"></script>
+  </body>
+</html>

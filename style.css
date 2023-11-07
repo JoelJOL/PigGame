@@ -201,6 +201,9 @@ main {
 .player--winner {
   background-color: #2f2f2f;
 }
+.won-celebration{
+  background-image: url("https://gifdb.com/images/high/usagyuuun-popping-party-popper-a1gkxort7bs8lzl6.gif")
+}
 
 .player--winner .name {
   font-weight: 700;
@@ -229,14 +232,115 @@ main {
   font-size: x-large;
   font-weight: 900;
   padding-left: 50px;
-  padding-top: 70px;
+  padding-top: 50px;
+  color: white;
 }
 .lower button {
   border-radius: 50px;
   font-size: xx-large;
   padding: 10px;
-  background-image: linear-gradient(to bottom left, #753682 0%, #bf2e34 100%);
+  background-image: linear-gradient(to bottom left, #e069f8 0%, #bf2e34 100%);
   border: none;
   font-family: inherit;
   font-weight: 700;
+  cursor: pointer;
+}
+
+#landing-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.landing-main-div{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
+  /* background-color: #302b63; */
+  /* background-color: #383592; */
+  background: linear-gradient(to right, rgb(119, 119, 165),#5858b1, #3d27e4);
+  border-radius: 20px;
+  /* justify-content: center; 
+  align-items: center;  */
+}
+#landing-main-div-1{
+  background: linear-gradient(to right, #4639a3, rgb(155, 155, 174),#4c3fad);
+
+}
+.landing-text-input{
+  height: 35px;
+  width: 350px;
+  background-color: #3939bc;
+  background: transparent;
+  margin-left: 60px;
+  border-radius: 20px;
+  border: 2px solid white;
+  font-size: medium;
+  padding-left: 20px;
+}
+::placeholder{
+  color:  #ffffff;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity; 
+  opacity: 0;
+}
+input{
+  color: rgb(255, 255, 255);
+}
+.landing-text-white{
+  color:white;
+  padding-left: 0;    
+  margin-left: 0;
+  align-items: start;
+  padding-left: 60px;
+  font-size: 20px;
+
+}
+#main-text-piggame{
+  text-align: center;
+  padding-left: 0;
+  font-size: 30px;
+  /* font-family: 'Inter', sans-serif; */
+font-family: 'Varela Round', sans-serif;
+font-weight: 900;
+
+}
+.play-button{
+  width: 30%;
+  height: 10%;
+  margin: 7% 35%;
+  border-radius: 30px;
+  border-color: white;
+  box-shadow: 1px 1px 8px 1px white;
+  cursor: pointer;
+  /* border-style:outset; */
+  /* border: 10px red; */
+  
+}
+#landing-button-1{
+  margin: 0% 34%;
+}
+.play-button:hover{
+  box-shadow: 1px 1px 10px 1px white;
+  background-color: rgb(178, 173, 255);
+
+}
+.play-button-text{
+  color:#302b63;
+  
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+  font-weight:900;
+  font-size: 20px;
+
+}
+#landing-image-icon{
+  width: 340px;
+margin-left: 15%;
+}
+a{
+  text-decoration: none;
 }

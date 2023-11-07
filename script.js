@@ -1,3 +1,15 @@
+const displayNames=()=>{
+  let name1=localStorage.getItem("name1");
+  let name2=localStorage.getItem("name2");
+  
+  document.getElementById("name--0").textContent=name1;
+  document.getElementById("name--1").textContent=name2;
+}
+
+displayNames(); 
+
+
+
 function NewGame() {
   location.reload();
   document.getElementById('score--0').innerHTML = '0';
@@ -32,7 +44,6 @@ function changePlayer() {
         document.getElementById(`score--${i}`).innerHTML =
           parseInt(document.getElementById(`score--${i}`).innerHTML) +
           parseInt(activeScore);
-        checkWinner();
         sectionClass[i].classList.remove('player--active');
       } else {
         sectionClass[i].classList.add('player--active');
@@ -41,6 +52,7 @@ function changePlayer() {
     }
     currentScore = 0;
   }, 500);
+  checkWinner();
 }
 
 const getScorePlayer = score => {
@@ -59,6 +71,9 @@ function checkWinner() {
   if (winScore >= 100) {
     winnerscore[0].classList.add('player--winner');
   }
+  let sectionClass = document.getElementsByTagName('section');
+  sectionClass[playerId].classList.add("won-celebration");
+
 }
 const reset = () => {
   document.getElementById(`current--${playerId}`).innerHTML = '0';
