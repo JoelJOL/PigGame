@@ -16,10 +16,9 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background: #6441A5;
-    background: -webkit-linear-gradient(to top, #2a0845, #6441A5);
-    background: linear-gradient(to top, #2a0845, #6441A5);
-  /* background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%); */
+  background: #6441a5;
+  background: -webkit-linear-gradient(to top, #2a0845, #6441a5);
+  background: linear-gradient(to top, #2a0845, #6441a5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,20 +47,6 @@ main {
   transition: all 0.75s;
   position: relative;
 }
-/* @keyframes mymove {
-  0% {border-bottom:7px solid rgb(224, 31, 166);}
-  0% {border-left: 7px solid rgb(224, 31, 166);}
-  0% {border-top: 7px solid rgb(224, 31, 166);}
-  0% {border-right: 7px solid rgb(224, 31, 166);}
-
-  100% {border-bottom:0;}
-  100% {border-left: 0;}
-  100% {border-top: 0;}
-  100% {border-right: 0;}
-
-
-} */
-
 /* ELEMENTS */
 .name {
   position: relative;
@@ -129,7 +114,7 @@ main {
 .current--score--active {
   animation: moveup 1s 1;
   color: #2f2f2f !important;
-  text-decoration:dashed;
+  text-decoration: dashed;
 }
 @keyframes moveup {
   0% {
@@ -201,8 +186,8 @@ main {
 .player--winner {
   background-color: #2f2f2f;
 }
-.won-celebration{
-  background-image: url("https://gifdb.com/images/high/usagyuuun-popping-party-popper-a1gkxort7bs8lzl6.gif")
+.won-celebration {
+  background-image: url('https://gifdb.com/images/high/usagyuuun-popping-party-popper-a1gkxort7bs8lzl6.gif');
 }
 
 .player--winner .name {
@@ -247,30 +232,25 @@ main {
   cursor: pointer;
 }
 
-#landing-screen{
+#landing-screen {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
 }
-.landing-main-div{
+.landing-main-div {
   display: flex;
   flex-direction: column;
   width: 500px;
   height: 400px;
-  /* background-color: #302b63; */
-  /* background-color: #383592; */
-  background: linear-gradient(to right, rgb(119, 119, 165),#5858b1, #3d27e4);
+  background: linear-gradient(to right, rgb(119, 119, 165), #5858b1, #3d27e4);
   border-radius: 20px;
-  /* justify-content: center; 
-  align-items: center;  */
 }
-#landing-main-div-1{
-  background: linear-gradient(to right, #4639a3, rgb(155, 155, 174),#4c3fad);
-
+#landing-main-div-1 {
+  background: linear-gradient(to right, #4639a3, rgb(155, 155, 174), #4c3fad);
 }
-.landing-text-input{
+.landing-text-input {
   height: 35px;
   width: 350px;
   background-color: #3939bc;
@@ -281,35 +261,32 @@ main {
   font-size: medium;
   padding-left: 20px;
 }
-::placeholder{
-  color:  #ffffff;
+::placeholder {
+  color: #ffffff;
 }
 [placeholder]:focus::-webkit-input-placeholder {
-  transition: opacity; 
+  transition: opacity;
   opacity: 0;
 }
-input{
+input {
   color: rgb(255, 255, 255);
 }
-.landing-text-white{
-  color:white;
-  padding-left: 0;    
+.landing-text-white {
+  color: white;
+  padding-left: 0;
   margin-left: 0;
   align-items: start;
   padding-left: 60px;
   font-size: 20px;
-
 }
-#main-text-piggame{
+#main-text-piggame {
   text-align: center;
   padding-left: 0;
   font-size: 30px;
-  /* font-family: 'Inter', sans-serif; */
-font-family: 'Varela Round', sans-serif;
-font-weight: 900;
-
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 900;
 }
-.play-button{
+.play-button {
   width: 30%;
   height: 10%;
   margin: 7% 35%;
@@ -317,31 +294,26 @@ font-weight: 900;
   border-color: white;
   box-shadow: 1px 1px 8px 1px white;
   cursor: pointer;
-  /* border-style:outset; */
-  /* border: 10px red; */
-  
 }
-#landing-button-1{
+#landing-button-1 {
   margin: 0% 34%;
 }
-.play-button:hover{
+.play-button:hover {
   box-shadow: 1px 1px 10px 1px white;
   background-color: rgb(178, 173, 255);
-
 }
-.play-button-text{
-  color:#302b63;
-  
+.play-button-text {
+  color: #302b63;
+
   margin: 0;
   font-family: 'Varela Round', sans-serif;
-  font-weight:900;
+  font-weight: 900;
   font-size: 20px;
-
 }
-#landing-image-icon{
+#landing-image-icon {
   width: 340px;
-margin-left: 15%;
+  margin-left: 15%;
 }
-a{
+a {
   text-decoration: none;
 }
