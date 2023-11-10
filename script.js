@@ -63,14 +63,14 @@ const getScorePlayer = score => {
 
 function checkWinner(i) {
   console.log('checking winner' + playerId);
-  let winnerscore = document.getElementsByClassName('player--active');
+  // let winnerscore = document.getElementsByClassName('player--active');
   let score = document.getElementById(`score--${i}`);
   let winScore = score.textContent;
   if (winScore >= 100) {
     console.log('won');
-    winnerscore[0].classList.add('player--winner');
+    // winnerscore[0].classList.add('player--winner');
     let sectionClass = document.getElementsByTagName('section');
-    sectionClass[i].classList.add('won-celebration');
+    sectionClass[i].classList.add('player--winner');
   }
 }
 const reset = () => {
