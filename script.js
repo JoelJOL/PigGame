@@ -38,52 +38,55 @@ function rollButton() {
 }
 
 function changePlayer() {
-  let moveScore = document.getElementById(`current--${playerId}`);
-  moveScore.classList.toggle('current--score--active');
-  setTimeout(function () {
-    moveScore.classList.toggle('current--score--active');
-    let sectionClass = document.getElementsByTagName('section');
-    for (let i = 0; i < 2; i++) {
-      if (sectionClass[i].classList.contains('player--active')) {
-        let activeScore = document.getElementById(`current--${i}`).innerHTML;
-        document.getElementById(`current--${i}`).innerHTML = '0';
-        document.getElementById(`score--${i}`).innerHTML =
-          parseInt(document.getElementById(`score--${i}`).innerHTML) +
-          parseInt(activeScore);
-          checkWinner(i);
-        sectionClass[i].classList.remove('player--active');
-        console.log("active before"+sectionClass[i]);
-      } else {
-        sectionClass[i].classList.add('player--active');
-        console.log("active after"+sectionClass[i]);
-        playerId = i;
-      }
-    }
-    currentScore = 0;
-  }, 500);
-}
-
-const getScorePlayer = score => {
-  currentScore += score;
-  let scoreTag = document.getElementById(`current--${playerId}`);
-  scoreTag.textContent = `${currentScore}`;
-};
-
-function checkWinner(i) {
-  console.log("checking winner"+playerId);
-  // let winnerscore = document.getElementsByClassName('player--active');
-  let score = document.getElementById(`score--${i}`);
-  let winScore = score.textContent;
-  if (winScore >= 10) {
-    console.log("won");
-    // winnerscore[0].classList.add('player--winner');
-    let sectionClass = document.getElementsByTagName('section');
-    sectionClass[i].classList.add("player--winner");
+  let sectionClass = document.getElementsByTagName('section');
+  for (let i = 0; i < 2; i++) {
+    sectionClass[i].classList.toggle('player--active');
   }
-  
-
 }
-const reset = () => {
-  document.getElementById(`current--${playerId}`).innerHTML = '0';
-  changePlayer();
-};
+  
+const getScorePlayer=(score)=>{
+    currentScore+=score;
+    let scoreTag=document.getElementById(`current--${playerId}`);
+    console.log(scoreTag);
+    scoreTag.textContent=`${currentScore}`;
+}
+
+  
+  
+   function checkwinner()
+   {
+    let playerId=0;
+    let winnerscore=document.getElementsByClassName('player--active');
+    console.log(winnerscore)
+    let score=document.getElementById(`score--${playerId}`);
+    winScore=score.textContent;
+    console.log(winScore)
+    if(winScore>=100)
+    {
+     winnerscore[0].classList.add('player--winner');
+    }
+
+  }
+   
+  
+ 
+
+  
+  
+   function checkwinner()
+   {
+    let playerId=0;
+    let winnerscore=document.getElementsByClassName('player--active');
+    console.log(winnerscore)
+    let score=document.getElementById(`score--${playerId}`);
+    winScore=score.textContent;
+    console.log(winScore)
+    if(winScore>=100)
+    {
+     winnerscore[0].classList.add('player--winner');
+    }
+
+  }
+   
+  
+ 
