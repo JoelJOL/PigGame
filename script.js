@@ -1,14 +1,12 @@
-const displayNames=()=>{
-  let name1=localStorage.getItem("name1");
-  let name2=localStorage.getItem("name2");
-  
-  document.getElementById("name--0").textContent=name1;
-  document.getElementById("name--1").textContent=name2;
-}
+const displayNames = () => {
+  let name1 = localStorage.getItem('name1');
+  let name2 = localStorage.getItem('name2');
 
-displayNames(); 
+  document.getElementById('name--0').textContent = name1;
+  document.getElementById('name--1').textContent = name2;
+};
 
-
+displayNames();
 
 function NewGame() {
   location.reload();
@@ -44,12 +42,12 @@ function changePlayer() {
         document.getElementById(`score--${i}`).innerHTML =
           parseInt(document.getElementById(`score--${i}`).innerHTML) +
           parseInt(activeScore);
-          checkWinner(i);
+        checkWinner(i);
         sectionClass[i].classList.remove('player--active');
-        console.log("active before"+sectionClass[i]);
+        console.log('active before' + sectionClass[i]);
       } else {
         sectionClass[i].classList.add('player--active');
-        console.log("active after"+sectionClass[i]);
+        console.log('active after' + sectionClass[i]);
         playerId = i;
       }
     }
@@ -64,18 +62,16 @@ const getScorePlayer = score => {
 };
 
 function checkWinner(i) {
-  console.log("checking winner"+playerId);
-  let winnerscore = document.getElementsByClassName('player--active');
+  console.log('checking winner' + playerId);
+  // let winnerscore = document.getElementsByClassName('player--active');
   let score = document.getElementById(`score--${i}`);
   let winScore = score.textContent;
   if (winScore >= 100) {
-    console.log("won");
-    winnerscore[0].classList.add('player--winner');
+    console.log('won');
+    // winnerscore[0].classList.add('player--winner');
     let sectionClass = document.getElementsByTagName('section');
-    sectionClass[i].classList.add("won-celebration");
+    sectionClass[i].classList.add('player--winner');
   }
-  
-
 }
 const reset = () => {
   document.getElementById(`current--${playerId}`).innerHTML = '0';
